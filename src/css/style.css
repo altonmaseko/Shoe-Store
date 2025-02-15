@@ -1,0 +1,263 @@
+/* The radio-container */
+:root {
+  --radio-width: 20px;
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.sidebar {
+  width: 200px;
+  border-right: 2px solid gray;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+@media (max-width: 540px) {
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar__cart {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgb(236, 234, 234);
+}
+.sidebar__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sidebar__section h2 {
+  margin-bottom: 1rem;
+}
+
+.radio-container input {
+  border-radius: 50%;
+  background-color: red;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 4rem;
+  padding-block: 1rem;
+  height: 60px;
+  width: 100%;
+  border-bottom: 2px solid rgb(236, 234, 234);
+}
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;
+  }
+}
+.header input {
+  padding: 0.5rem;
+  background-color: rgb(236, 234, 234);
+  border: none;
+  color: black;
+}
+.header__icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: max(20%, 100px);
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .header__icons-container {
+    display: none;
+  }
+}
+
+.main {
+  width: 100%;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  position: relative;
+}
+.main-content header {
+  display: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main-content header .brand-cubes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.main-content header .brand-cubes .brand-cube {
+  border: 2px solid rgb(194, 193, 193);
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  background-color: white;
+}
+.main-content header .brand-cubes .brand-cube:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+.main-content header .brand-cubes .brand-cube:active {
+  scale: 1;
+  border: 2px solid black;
+}
+
+.main-content-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  flex-grow: 1;
+  min-height: 0;
+  overflow-y: scroll;
+  position: relative;
+}
+.main-content-main .content {
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: fit-content;
+  row-gap: 2rem;
+  justify-content: center;
+}
+@media (max-width: 1200px) {
+  .main-content-main .content {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1000px) {
+  .main-content-main .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .main-content-main .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .main-content-main .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shoe-card {
+  max-width: 200px;
+  border: 2px solid rgb(206, 202, 202);
+  padding: 1rem;
+  height: fit-content;
+  border-radius: 0.5rem;
+}
+.shoe-card__img {
+  width: 100%;
+  min-height: 120px;
+}
+.shoe-card__img img {
+  width: 100%;
+}
+.shoe-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.active-brand {
+  border: 2px solid black !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding-top: 0.5rem;
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+  border: 2px solid green;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 4rem;
+  padding-block: 1rem;
+  height: 60px;
+  width: 100%;
+
+  border-bottom: 2px solid rgb(236, 234, 234);
+
+  @media (max-width: 768px) {
+    justify-content: center;
+
+  }
+
+  input {
+    padding: 0.5rem;
+    background-color: rgb(236, 234, 234);
+    border: none;
+    color: black;
+  }
+
+  &__icons-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: max(20%, 100px);
+    align-items: center;
+    gap: 1rem;
+
+    // hide when screen is small
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+
+}

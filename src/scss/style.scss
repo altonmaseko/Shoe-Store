@@ -1,0 +1,22 @@
+@use 'modules/sidebar';
+@use 'modules/header';
+@use 'modules/main';
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding-top: 0.5rem;
+
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+  border: 2px solid green;
+
+  overflow: hidden;
+
+}

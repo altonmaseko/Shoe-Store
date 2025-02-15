@@ -1,0 +1,49 @@
+@use 'custom-radio';
+
+.sidebar {
+  width: 200px;
+  border-right: 2px solid gray;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+
+  // hide when screen is very small
+  @media (max-width: 540px) {
+    display: none;
+  }
+
+  &__cart {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(236, 234, 234);
+
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    // align-items: center;
+  }
+
+}
+
+.radio-container {
+  input {
+    // make it round
+    border-radius: 50%;
+    background-color: red;
+
+
+
+  }
+}
